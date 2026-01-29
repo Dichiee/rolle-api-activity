@@ -7,11 +7,21 @@ router.get('/transactions', (req, res) => {
     const { date, type, amount, description } = req.query;
 
     let filteredTransactions = data
-    .filter (
-        (transaction) => (!date || transaction.date === date) &&
-        (!type || transaction.type === type) &&
-        (!amount || transaction.amount === parseFloat(amount)) &&
-        (!description || transaction.description.toLowerCase().includes(description.toLowerCase()))
+   .filter(
+        (transaction) =>
+            !date || transaction.date === date
+    )
+    .filter( 
+        (transaction) =>
+            !type || transaction.type === type
+    )
+    .filter(
+        (transaction) =>
+            !amount || transaction.amount === parseFloat(amount)
+    )
+    .filter(
+        (transaction) =>
+            !description || transaction.description.toLowerCase().includes(description.toLowerCase())
     );
 
     return filteredTransactions.length == 0
@@ -81,5 +91,6 @@ router.delete('/transactions/:id', (req, res) => {
         message: 'Transaction deleted successfully.',
     });
 });
+
 
 module.exports = router;
