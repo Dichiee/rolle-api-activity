@@ -17,3 +17,10 @@
 **4. Testing**
 
 - (Paste a ss)
+
+**"Why did I choose to Embed the [Review/Tag/Log]?"**
+- Answer: I chose to embed the tags because they are small pieces of data that belong only to one transaction. They do not need their own collection, so embedding them makes the data easier and faster to access.
+
+**"Why did I choose to Reference the [Chef/User/Guest]?"**
+- Answer: I chose to reference the user because one user can have many transactions. Referencing avoids repeating user data in every transaction and keeps the database organized and easy to update.
+
