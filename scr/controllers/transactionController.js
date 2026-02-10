@@ -1,3 +1,5 @@
+const Transaction = require('../models/transactionModel');
+
 const getALLTransactions = async (req, res) => {
     try {
         const transactions = await Transaction.find();
@@ -49,6 +51,7 @@ const deleteTransaction = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
 
 module.exports = {
     getALLTransactions,

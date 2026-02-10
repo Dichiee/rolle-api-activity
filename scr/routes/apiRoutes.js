@@ -6,9 +6,10 @@ const {
     createTransaction,
     getTransactionById,
     updateTransaction,
-    deleteTransaction 
+    deleteTransaction
 } = require('../controllers/transactionController');
 
+// Transaction Routes
 router.get('/transactions', getALLTransactions);
 router.post('/transactions', createTransaction);
 router.get('/transactions/:id', getTransactionById);
